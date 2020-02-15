@@ -7,3 +7,7 @@ lienzo.moveTo(100, 100)
 lienzo.lineTo(200, 200)
 lienzo.stroke()
 lienzo.closePath()
+
+function dibujarLinea(xi, yi, xf, yf){
+
+}
