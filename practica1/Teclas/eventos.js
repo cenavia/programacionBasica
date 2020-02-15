@@ -11,5 +11,20 @@ document.addEventListener("keyup", dibujarTeclado)
 
 function dibujarTeclado(evento){
 
-
+    if(evento.keyCode == teclas.UP){
+        console.log("vamo' pa arriba")
+    }
+  
+    switch (evento.keyCode) {
+        case teclas.UP:
+            console.log("arriba")
+            break;
+        case teclas.DOWN:
+            console.log("abajo")
+            break;
+    
+        default:
+            console.log("Otra tecla")
+            break;
+    }
 }
