@@ -1,13 +1,27 @@
 var d =document.getElementById("dibujito");
 var lienzo =  d.getContext("2d");
 
-dibujarLinea(100, 100, 200, 200)
+var lineas = 30
+var l = 0
+var colorBorder = "blue"
 
-function dibujarLinea(xi, yi, xf, yf){
-    lienzo.beginPath();
-    lienzo.strokeStyle = "red"
+while (l < lineas) {
+    yi = 10 * l
+    xf = 10 * (1+l)
+    dibujarLinea("blue", 0, yi, xf, 299)
+    l = l + 1
+}
+
+
+dibujarLinea(colorBorder, 0, 1, 1, 300)
+dibujarLinea(colorBorder, 1, 299, 299, 299)
+
+function dibujarLinea(color, xi, yi, xf, yf){
+    lienzo.beginPath()
+    lienzo.strokeStyle = color
     lienzo.moveTo(xi, yi)
     lienzo.lineTo(xf, yf)
     lienzo.stroke()
     lienzo.closePath()
 }
+
