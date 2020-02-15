@@ -1,3 +1,5 @@
+var text = document.getElementById("texto_lineas")
+var boton = document.getElementById("botoncito")
 var d =document.getElementById("dibujito");
 var lienzo =  d.getContext("2d");
 
