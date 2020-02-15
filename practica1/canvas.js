@@ -16,6 +16,14 @@ while (l < lineas) {
 dibujarLinea(colorBorder, 0, 1, 1, 300)
 dibujarLinea(colorBorder, 1, 299, 299, 299)
 
+// ciclo que dibuja la linea de forma inversa - desafio Freddy
+
+for (l=0; l < lineas; l++){
+    yf = 10 * l
+    xi = 10 * (1+l)
+    dibujarLinea("blue", xi, 0, 299, yf)
+}
+
 function dibujarLinea(color, xi, yi, xf, yf){
     lienzo.beginPath()
     lienzo.strokeStyle = color
