@@ -5,27 +5,47 @@ var teclas = {
     RIGHT: 39
 };
 
-console.log(teclas)
+document.addEventListener("keydown", dibujarTeclado)
+var cuadrito = document.getElementById("area_de_dibujo")
+var papel = cuadrito.getContext("2d")
+var x = 150
+var y = 150
 
-document.addEventListener("keyup", dibujarTeclado)
+dibujarLinea("red", x-1, y-1, x+1, y+1, papel)
+
+function dibujarLinea(color, xi, yi, xf, yf, lienzo){
+    lienzo.beginPath()
+    lienzo.strokeStyle = color
+    lienzo.lineWidth = 3
+    lienzo.moveTo(xi, yi)
+    lienzo.lineTo(xf, yf)
+    lienzo.stroke()
+    lienzo.closePath()
+}
+
 
 function dibujarTeclado(evento){
 
-    switch (evento.keyCode) {
+    var colorsito = "blue"
+    var moviento = 1
+
+    switch (evento.keyCode) 
+    {
         case teclas.UP:
-            console.log("arriba")
+            dibujarLinea("colorsito", x, y, x, y - moviento, papel)
+            y = y - moviento
             break;
         case teclas.DOWN:
-            console.log("abajo")
+            dibujarLinea("colorsito", x, y, x, y + moviento, papel)
+            y = y + moviento            
             break;
         case teclas.LEFT:
-            console.log("Izquierda")
+            dibujarLinea("colorsito", x, y, x - moviento, y, papel)
+            x = x - moviento
             break;
         case teclas.RIGHT:
-            console.log("Derecha")
-            break;
-        default:
-            console.log("Otra tecla")
+            dibujarLinea("colorsito", x, y, x + moviento, y, papel)
+            x = x + moviento
             break;
     }
 }
