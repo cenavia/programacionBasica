@@ -1,6 +1,9 @@
-var z = aleatorio(10, 20)
+var z 
 
-document.write(z)
+for (let i = 0; i < 10; i++) {
+    z = aleatorio(20, 40)
+    document.write(z +",")
+}
 
 function aleatorio(min, maxi){
     var resultado
